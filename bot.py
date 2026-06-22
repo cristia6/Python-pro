@@ -1,9 +1,5 @@
 import discord
 
-from bot_logic import gen_pass
-
-from bot_logic import caraoucoroa
-
 # A variável intents armazena as permissões do bot
 intents = discord.Intents.default()
 # Ativar a permissão para ler o conteúdo das mensagens
