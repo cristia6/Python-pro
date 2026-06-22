@@ -1,4 +1,7 @@
 import discord
+from bot_logic import gen_pass
+
+from bot_logic import caraoucoroa
 
 # A variável intents armazena as permissões do bot
 intents = discord.Intents.default()
@@ -19,6 +22,12 @@ async def on_message(message):
         await message.channel.send("Hello!")
     elif message.content.startswith('$bye'):
         await message.channel.send("\U0001f642")
+    elif message.content.startswith('$melhorjogo'):
+        await message.channel.send("hollow knight")
+    elif message.content.startswith('$gerarsenha'):
+        await message.channel.send(gen_pass(10))
+    elif message.content.startswith('$caraoucoroa'):
+        await message.channel.send(caraoucoroa())
     else:
         await message.channel.send(message.content)
 
