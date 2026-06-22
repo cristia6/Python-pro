@@ -37,6 +37,26 @@ async def caraoucoroa(ctx):
     await ctx.send(caraoucoroa())   
 
 @bot.command()
+async def pedrapapeltesoura(ctx , player):
+    comp = random.randint(1,3)
+    
+    if comp == 1:
+        comp = "pedra"
+    if comp == 2:
+        comp = "tesoura"
+    if comp == 3:
+        comp = "papel"
+    
+    if (player == "pedra" and comp == "tesoura") or (player == "tesoura" and comp == "papel") or (player == "papel" and comp == "pedra") :
+        await ctx.send(f"{comp} - O jogador ganhou!")
+            
+    elif player == comp :
+        await ctx.send(f"{comp} - Empate!")
+    
+    else:
+        await ctx.send(f"{comp} - O computador ganhou!")
+
+@bot.command()
 async def echo(ctx, *, message):
     await ctx.send(message)
 
